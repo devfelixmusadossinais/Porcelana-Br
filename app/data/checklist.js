@@ -450,7 +450,7 @@ var CHECKLIST = {
       {
         "id": "confortavel",
         "cor": "verde",
-        "rotulo": "confort?vel",
+        "rotulo": "confortável",
         "titulo": "Verde · mantenha o conforto",
         "quando": "Sua pele está confortável e macia, sem repuxar.",
         "oQueFazer": "Mantenha sua rotina constante. Se quiser experimentar algo novo, teste em uma pequena área primeiro e introduza apenas uma receita por vez."

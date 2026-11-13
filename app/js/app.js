@@ -21,7 +21,10 @@
     var base = r.split('-')[0];
     if (premium[base] && !temModulo(premium[base])) { window.location.replace('#materials'); return; }
 
-    if (!S.aceitouRegras && r !== 'g-aviso') {
+    /* Entrada direta: sem boas-vindas, sem aceite das regras e sem Dia 0. O dia 1 começa no primeiro acesso. */
+    if (!S.aceitouRegras) { S.aceitouRegras = true; if (!S.inicio) S.inicio = hojeISO(); salvar(); }
+
+    if (false) {
       html = telaOnboarding(); mostrarNav = false;
     } else if (r === 'dia0') {
       if (S.inicio) { window.location.replace('#hoje'); return; }
@@ -151,7 +154,7 @@
         var rp = regDia(d); rp.pele = rp.pele === ds.v ? null : ds.v; salvar(); render(); break;
       case 'concluir':
         var rc = regDia(d); rc.concluido = !rc.concluido; salvar(); render();
-        if (rc.concluido) toast('Dia ' + d + ' conclu?do.');
+        if (rc.concluido) toast('Dia ' + d + ' concluído.');
         break;
       case 'f-camada': UI.filtro.camada = ds.v; render(); break;
       case 'f-ess': UI.filtro.ess = !UI.filtro.ess; render(); break;

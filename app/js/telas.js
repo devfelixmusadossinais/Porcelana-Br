@@ -186,7 +186,7 @@ function telaDias() {
   var feitos = diasConcluidos(), pct = Math.round(feitos / total * 100);
   var h = topo() + '<p class="kicker">Sua jornada</p><h1>21 dias</h1>';
   if (!atual) h += '<div class="card pastel"><p>Seu dia 1 ainda não começou.</p><div class="btns"><button class="btn block" data-acao="ir-dia0">Começar meu dia 1</button></div></div>';
-  h += '<div class="resumo"><div><b>' + pct + '%</b><span>conclu?do</span></div><div><b>' + feitos + '</b><span>de ' + total + ' dias</span></div><div><b>' + sequencia() + '</b><span>dias seguidos</span></div></div>' +
+  h += '<div class="resumo"><div><b>' + pct + '%</b><span>concluído</span></div><div><b>' + feitos + '</b><span>de ' + total + ' dias</span></div><div><b>' + sequencia() + '</b><span>dias seguidos</span></div></div>' +
     '<div class="barra clara" style="margin-top:12px" aria-hidden="true"><span style="transform:scaleX(' + feitos / total + ')"></span></div>' +
     '<div class="legenda"><span><i style="background:var(--cta);border-color:var(--cta)"></i>feito</span><span><i style="background:var(--ouro-p);border-color:var(--ouro)"></i>hoje</span><span><i></i>pendente</span></div>';
   for (var w = 1; w <= 3; w++) h += blocoSemana(w, atual);

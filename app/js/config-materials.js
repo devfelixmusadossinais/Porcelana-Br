@@ -19,8 +19,8 @@ CONFIG.EBOOKS = {
 
 /* Order bumps. preco is in USD (starting values, change freely). checkout opens in a new tab. */
 CONFIG.ADDONS = {
-  calendar: { preco: 7, checkout: '#CHECKOUT_CALENDAR' },
-  pantry:   { preco: 5, checkout: '#CHECKOUT_PANTRY' }
+  calendar: { preco: 10, checkout: 'https://pay.cakto.com.br/virke2j' },
+  pantry:   { preco: 14.9, checkout: 'https://pay.cakto.com.br/yrjebom' }
 };
 
 /* 'open'   : any valid email unlocks the add-on on this device (trust based, no server).

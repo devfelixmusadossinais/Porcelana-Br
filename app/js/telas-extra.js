@@ -359,9 +359,9 @@ function cardAddon(livro) {
   var nome = livro.addon, cf = CONFIG.ADDONS[nome] || {}, k = chaveLivro(livro);
   if (temAddon(nome)) return cardExtra(livro, { selo: true });
   var aberto = UI.unlockAberto === nome, msg = UI.unlockMsg && UI.unlockMsg.nome === nome ? UI.unlockMsg.texto : '';
-  var preco = cf.preco != null ? '$' + cf.preco : '';
+  var preco = cf.preco != null ? 'R$ ' + String(cf.preco.toFixed(2)).replace('.', ',') : '';
   return '<article class="card extra-card addon-bloqueado" id="addon-' + k + '">' + capaLivro(livro, false) + '<div class="extra-corpo"><h3>' + esc(livro.titulo) + '</h3><p class="muted">' + esc(livro.descricao) + '</p>' +
-    '<div class="addon-preco"><span class="selo-bloq">' + ico('cadeado') + 'Bloqueado</span>' + (preco ? '<b>' + esc(preco) + '</b><small>pagamento ?nico</small>' : '') + '</div>' +
+    '<div class="addon-preco"><span class="selo-bloq">' + ico('cadeado') + 'Bloqueado</span>' + (preco ? '<b>' + esc(preco) + '</b><small>pagamento único</small>' : '') + '</div>' +
     '<a class="btn block" href="' + esc(cf.checkout || '#') + '" target="_blank" rel="noopener" aria-label="Comprar ' + esc(livro.titulo) + (preco ? ' por ' + esc(preco) : '') + '">' + ico('sacola') + 'Comprar' + (preco ? ' · ' + esc(preco) : '') + '</a>' +
     '<button class="link-unlock" data-acao="unlock-abrir" data-v="' + nome + '" aria-expanded="' + aberto + '">Já comprou? Digite seu e-mail para liberar</button>' +
     (aberto ? '<form class="form-unlock" data-form="unlock" data-v="' + nome + '" novalidate><label class="sr" for="ul-' + nome + '">E-mail</label>' +
